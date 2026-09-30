@@ -1,0 +1,114 @@
+/* Reset: tira margens/paddings padrão do navegador e faz o
+   padding/border entrarem na largura total (mais fácil de calcular) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === ESTILO GERAL === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fde8ef;      /* Rosa pastel de fundo */
+    display: flex;                  /* Centraliza tudo */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* === CARD CENTRAL === */
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(232, 143, 171, 0.25);  /* Sombra rosada */
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    color: #d96b8f;           /* Rosa mais forte para o título */
+    margin-bottom: 0.5rem;    /* O reset zerou a margem padrão do h1 */
+}
+
+/* Texto de instrução abaixo do título */
+.subtitulo {
+    color: #a67c8a;
+    margin-bottom: 1rem;      /* Espaço antes do seletor de idioma */
+}
+
+/* === SELETOR DE IDIOMA === */
+select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #f8cbd9;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* === CAMPO DE TEXTO === */
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #f8cbd9;
+    border-radius: 8px;
+    width: 100%;
+    margin: 1rem 0;
+    box-sizing: border-box;         /* Inclui padding na largura */
+    transition: border-color 0.2s;  /* Suaviza a troca de cor da borda */
+}
+
+/* Quando o campo ou o seletor está selecionado (focado) */
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #e88fab;
+}
+
+/* Quando o campo tiver a classe "erro", a borda fica vermelha */
+input[type="text"].erro {
+    border-color: #e05470;
+}
+
+/* Quando o campo tiver a classe "sucesso", a borda fica verde */
+input[type="text"].sucesso {
+    border-color: #6dbf94;
+}
+
+/* === BOTÃO === */
+button {
+    padding: 10px 24px;
+    font-size: 1rem;
+    background-color: #e88fab;      /* Rosa do botão */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;                /* Mãozinha ao passar o mouse */
+    transition: background-color 0.2s, transform 0.2s;
+}
+button:hover {
+    background-color: #d6708f;      /* Escurece ao passar o mouse */
+    transform: translateY(-2px);    /* Sobe levemente */
+}
+
+/* === RESULTADO === */
+#resultado {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    min-height: 2rem;               /* Reserva espaço para evitar pulo */
+}
+
+/* Texto do resultado quando é erro */
+#resultado.erro {
+    color: #e05470;
+}
+
+/* Texto do resultado quando é sucesso */
+#resultado.sucesso {
+    color: #d96b8f;
+}

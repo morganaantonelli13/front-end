@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 4 — Validador de Formulário</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+
+        <!-- Barra de progresso: 3 blocos lado a lado.
+             O JS troca as classes "atual" e "completo" conforme avança. -->
+        <div class="progresso">
+            <div class="passo atual" id="passo-1">1. Dados</div>
+            <div class="passo" id="passo-2">2. Contato</div>
+            <div class="passo" id="passo-3">3. Confirmar</div>
+        </div>
+
+        <!-- Usamos <form> para agrupar os campos.
+             O JS vai interceptar o envio com preventDefault. -->
+        <form id="formulario">
+
+            <!-- ETAPA 1: Nome + Idade -->
+            <div class="etapa ativa" id="etapa-1">
+                <div class="campo">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                    <div class="mensagem" id="msg-nome"></div>
+                </div>
+
+                <div class="campo">
+                    <label for="idade">Idade:</label>
+                    <input type="number" id="idade" placeholder="Digite sua idade">
+                    <div class="mensagem" id="msg-idade"></div>
+                </div>
+
+                <button type="button" id="btn-prox-1">Próximo →</button>
+            </div>
+
+            <!-- ETAPA 2: E-mail + Senha -->
+            <div class="etapa" id="etapa-2">
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" placeholder="seu@email.com">
+                    <div class="mensagem" id="msg-email"></div>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha (mínimo 6 caracteres):</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha">
+                    <div class="mensagem" id="msg-senha"></div>
+                </div>
+
+                <button type="button" id="btn-volta-2" class="btn-voltar">← Voltar</button>
+                <button type="button" id="btn-prox-2">Próximo →</button>
+            </div>
+
+            <!-- ETAPA 3: Resumo + Enviar -->
+            <div class="etapa" id="etapa-3">
+                <!-- O JS preenche essa div com innerHTML ao chegar aqui -->
+                <div id="resumo"></div>
+
+                <button type="button" id="btn-volta-3" class="btn-voltar">← Voltar</button>
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </div>
+        </form>
+
+        <!-- Mensagem final de sucesso, escondida no início -->
+        <div id="resultado-final"></div>
+    </div>
+
+    <script src="script4.js"></script>
+</body>
+</html>

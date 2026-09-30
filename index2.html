@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 2 — Calculadora Simples</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+
+        <!-- Primeiro número -->
+        <input type="number" id="num1" placeholder="Primeiro número">
+
+        <!-- Seletor de operação — o usuário escolhe uma das operações -->
+        <select id="operacao">
+            <option value="+">+ Somar</option>
+            <option value="-">− Subtrair</option>
+            <option value="*">× Multiplicar</option>
+            <option value="/">÷ Dividir</option>
+            <option value="%">% Resto da divisão</option>
+            <option value="**">^ Potência</option>
+        </select>
+
+        <!-- Segundo número -->
+        <input type="number" id="num2" placeholder="Segundo número">
+
+        <button id="btn-calcular">Calcular</button>
+        <button id="btn-limpar">Limpar</button>
+
+        <p id="resultado">Resultado aparecerá aqui</p>
+
+        <!-- Histórico de cálculos: preenchido pelo JS -->
+        <ul id="historico"></ul>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>

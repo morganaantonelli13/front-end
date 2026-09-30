@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 3 — Contador Interativo</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contador</h1>
+
+        <!-- Número exibido — começa em 0 -->
+        <div id="numero">0</div>
+
+        <!-- Barra de progresso: mostra a posição de "contador" entre MIN e MAX -->
+        <div class="barra-fundo">
+            <div class="barra-interna" id="barra-interna"></div>
+        </div>
+
+        <!-- Campo para o usuário definir o passo do +/- -->
+        <label for="campo-passo">Passo:</label>
+        <input type="number" id="campo-passo" value="1" min="1">
+
+        <!-- Três botões lado a lado -->
+        <div class="botoes">
+            <button class="btn-menos" id="btn-menos">−</button>
+            <button class="btn-reset" id="btn-reset">Reset</button>
+            <button class="btn-mais"  id="btn-mais">+</button>
+        </div>
+
+        <!-- Log de ações -->
+        <h2>Log de ações</h2>
+        <div id="log"></div>
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+</html>

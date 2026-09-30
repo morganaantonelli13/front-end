@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/* Reset: tira margens/paddings padrão do navegador e faz o
+   padding/border entrarem na largura total (mais fácil de calcular) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 420px;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* === BARRA DE PROGRESSO === */
+.progresso {
+    display: flex;
+    margin-bottom: 1.5rem;
+    gap: 6px;
+}
+.passo {
+    flex: 1;                    /* Os 3 blocos dividem o espaço igualmente */
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: #e0e0e0;
+    color: #777;
+    transition: all 0.3s;
+}
+/* Etapa em que o usuário está agora */
+.passo.atual {
+    background: #2c3e50;
+    color: white;
+}
+/* Etapas já concluídas */
+.passo.completo {
+    background: #27ae60;
+    color: white;
+}
+
+/* === ETAPAS DO FORMULÁRIO === */
+/* Por padrão, toda etapa fica escondida... */
+.etapa {
+    display: none;
+}
+/* ...só a que tiver a classe "ativa" aparece */
+.etapa.ativa {
+    display: block;
+}
+
+/* Grupo de campo: label + input + mensagem */
+.campo {
+    margin-bottom: 1rem;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #2c3e50;
+}
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+/* Cor diferente quando o campo está em foco (o usuário clicou nele) */
+input:focus {
+    outline: none;
+    border-color: #2c3e50;
+}
+
+/* Classes de validação — adicionadas pelo JS */
+input.valido   { border-color: #27ae60; }  /* Verde */
+input.invalido { border-color: #e74c3c; }  /* Vermelho */
+
+/* Mensagem de erro/sucesso abaixo de cada campo */
+.mensagem {
+    font-size: 0.85rem;
+    margin-top: 4px;
+    min-height: 1.2rem;
+}
+.mensagem.erro    { color: #e74c3c; }
+.mensagem.sucesso { color: #27ae60; }
+
+/* === BOTÕES === */
+button {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+    color: white;
+    transition: all 0.3s;
+}
+
+/* Botão "Próximo" — azul-escuro (cor padrão do button) */
+button {
+    background-color: #2c3e50;
+}
+button:hover {
+    background-color: #1a252f;
+}
+
+/* Botão "Voltar" — cinza */
+.btn-voltar {
+    background-color: #95a5a6;
+}
+.btn-voltar:hover {
+    background-color: #7f8c8d;
+}
+
+/* Botão "Enviar" — verde */
+.btn-enviar {
+    background-color: #27ae60;
+}
+.btn-enviar:hover {
+    background-color: #229954;
+}
+
+/* Quando etapa 2 e 3 têm dois botões lado a lado */
+.btn-voltar {
+    margin-right: 8px;
+    width: calc(50% - 4px);
+    display: inline-block;
+}
+#btn-prox-2, .btn-enviar {
+    width: calc(50% - 4px);
+    display: inline-block;
+}
+
+/* === RESUMO (ETAPA 3) === */
+#resumo {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+/* Cada linha do resumo (Nome, Idade, E-mail, Senha) precisa de
+   espaço entre si — o reset zerou a margem padrão do <p> */
+#resumo p {
+    margin-bottom: 0.5rem;
+}
+#resumo p:last-child {
+    margin-bottom: 0;
+}
+
+/* === RESULTADO FINAL === */
+#resultado-final {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #27ae60;
+}
